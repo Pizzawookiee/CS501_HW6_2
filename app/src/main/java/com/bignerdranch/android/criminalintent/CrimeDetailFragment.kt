@@ -33,7 +33,7 @@ import android.text.format.DateFormat
 import java.util.Date
 import java.util.Locale
 
-//private var DATE_FORMAT = DateFormat.getBestDateTimePattern(Locale.getDefault(), "MMMM d, YYYY")
+
 private const val DATE_FORMAT = "EEE, MMM, dd"
 
 class CrimeDetailFragment : Fragment() {
