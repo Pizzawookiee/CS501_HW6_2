@@ -20,16 +20,16 @@ import java.util.Locale
 
 
 class CrimeListAdapterTest{
-//    private lateinit var scenario: ActivityScenario<MainActivity>
+    private lateinit var scenario: ActivityScenario<MainActivity>
 
     // https://stackoverflow.com/a/21810126
     @Before
     fun setUp() {
-//        scenario = launch(MainActivity::class.java)
+        scenario = launch(MainActivity::class.java)
 //        Log.d("start",Locale.getDefault().getCountry())
 //        Log.d("start",Locale.getDefault().getLanguage())
 //        val locale = Locale("ENGLISH","CANADA")
-//        Locale.setDefault(Locale.GERMANY)
+//        Locale.setDefault(Locale.FRANCE)
 //        val resources = Resources.getSystem()
 //        val configuration = resources.configuration
 ////        configuration.setLocale(Locale.FRANCE)
@@ -38,27 +38,23 @@ class CrimeListAdapterTest{
 
     @Test
     fun testEnglishLocale() {
-        val date  = Date()
         Locale.setDefault(Locale.ENGLISH)
-        val sdf = SimpleDateFormat()
-        Log.d("en", sdf.format(date).toString())
-//        onView(withId(R.id.crime_title)).perform(click())
+        onView(withId(R.id.new_crime)).perform(click())
+        Thread.sleep(5000)
     }
 
     @Test
     fun testGermanyLocale() {
-        val date  = Date()
         Locale.setDefault(Locale.GERMANY)
-        val sdf = SimpleDateFormat()
-        Log.d("ge", sdf.format(date).toString())
+        onView(withId(R.id.new_crime)).perform(click())
+        Thread.sleep(5000)
     }
 
     @Test
     fun testFranceLocale() {
-        val date  = Date()
         Locale.setDefault(Locale.FRANCE)
-        val sdf = SimpleDateFormat()
-        Log.d("fr", sdf.format(date).toString())
+        onView(withId(R.id.new_crime)).perform(click())
+        Thread.sleep(5000)
     }
 
     @After
