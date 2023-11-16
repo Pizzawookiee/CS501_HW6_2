@@ -31,6 +31,7 @@ import java.io.File
 //import java.text.DateFormat
 import android.text.format.DateFormat
 import java.util.Date
+import java.text.SimpleDateFormat
 import java.util.Locale
 
 
@@ -153,7 +154,12 @@ class CrimeDetailFragment : Fragment() {
             if (crimeTitle.text.toString() != crime.title) {
                 crimeTitle.setText(crime.title)
             }
-            crimeDate.text = crime.date.toString()
+
+            //crimeDate.text = crime.date.toString()
+            val sdf = SimpleDateFormat()
+            crimeDate.text = sdf.format(crime.date).toString()
+
+
             crimeDate.setOnClickListener {
                 findNavController().navigate(
                     CrimeDetailFragmentDirections.selectDate(crime.date)
